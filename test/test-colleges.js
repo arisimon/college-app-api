@@ -5,8 +5,8 @@ const mongoose = require('mongoose');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 
-const { Observations } = require('../observations/models');
-const { Species } = require('../species/models');
+const { Applications } = require('../applications/models');
+const { Colleges } = require('../colleges/models');
 const { User } = require('../users/models');
 const { app, runServer, closeServer } = require('../server');
 const { JWT_EXPIRY, JWT_SECRET, TEST_DATABASE_URL, PORT } = require('../config');
@@ -21,7 +21,7 @@ function generateColleges() {
         // web_pages: faker.name.url(),
         alpha_two_code: faker.name.firstName(),
         state_province: faker.name.lastName(),
-        country: faker.name.country()
+        country: faker.name.firstName()
     }
 }
 
